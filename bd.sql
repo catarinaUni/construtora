@@ -94,6 +94,7 @@ CREATE TABLE `alocacao_funcionarios` (
   `projeto_id` integer,
   `funcionario_id` integer,
   `data_inicio` date,
+  `status` varchar(255),
   `data_fim` date,
   `created_at` timestamp
 );
@@ -229,6 +230,16 @@ CREATE TABLE `relatorios_progresso` (
   `status` varchar(255),
   `created_at` timestamp
 );
+
+CREATE TABLE relatorios_funcionarios (
+  id INTEGER PRIMARY KEY,
+  relatorio_id INTEGER,
+  funcionario_id INTEGER,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (relatorio_id) REFERENCES relatorios_progresso(id) ON DELETE CASCADE,
+  FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE
+);
+
 
 CREATE TABLE `relatorios_gastos` (
   `id` integer PRIMARY KEY,
