@@ -235,6 +235,7 @@ CREATE TABLE relatorios_funcionarios (
   id INTEGER PRIMARY KEY,
   relatorio_id INTEGER,
   funcionario_id INTEGER,
+  descricao text,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (relatorio_id) REFERENCES relatorios_progresso(id) ON DELETE CASCADE,
   FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE
@@ -495,6 +496,19 @@ VALUES
 (9, 'Fabiana Rocha', 'Arquiteta', 8000.00, 2, '2021-04-10', NOW(), NOW()),
 (10, 'Rafael Oliveira', 'Engenheiro de Obras', 9000.00, 3, '2023-07-15', NOW(), NOW());
 
+INSERT INTO orcamentos (id, projeto_id, valor_total, moeda, status, created_at, updated_at)
+VALUES
+(1, 1, 1500000.00, 'BRL', 'Aprovado', NOW(), NOW()),
+(2, 2, 800000.00, 'BRL', 'Em análise', NOW(), NOW()),
+(3, 3, 5000000.00, 'USD', 'Aprovado', NOW(), NOW()),
+(4, 4, 1200000.00, 'BRL', 'Rejeitado', NOW(), NOW()),
+(5, 5, 3500000.00, 'USD', 'Aprovado', NOW(), NOW()),
+(6, 6, 2000000.00, 'BRL', 'Em análise', NOW(), NOW()),
+(7, 7, 4500000.00, 'BRL', 'Aprovado', NOW(), NOW()),
+(8, 8, 1000000.00, 'BRL', 'Rejeitado', NOW(), NOW()),
+(9, 9, 3000000.00, 'USD', 'Aprovado', NOW(), NOW()),
+(10, 10, 700000.00, 'BRL', 'Em análise', NOW(), NOW());
+
 INSERT INTO projetos (id, nome, descricao, data_inicio, data_fim_prevista, status, cliente_id, orcamento_id, created_at, updated_at)
 VALUES
 (1, 'Projeto Alfa', 'Construção de um prédio comercial', '2024-01-01', '2024-12-31', 'Em andamento', 1, 1, NOW(), NOW()),
@@ -508,18 +522,7 @@ VALUES
 (9, 'Projeto Iota', 'Desenvolvimento de parque eólico', '2024-09-01', '2026-09-01', 'Planejamento', 9, 9, NOW(), NOW()),
 (10, 'Projeto Kappa', 'Ampliação de estação de tratamento de água', '2024-10-01', '2025-10-01', 'Em andamento', 10, 10, NOW(), NOW());
 
-INSERT INTO orcamentos (id, projeto_id, valor_total, moeda, status, created_at, updated_at)
-VALUES
-(1, 1, 1500000.00, 'BRL', 'Aprovado', NOW(), NOW()),
-(2, 2, 800000.00, 'BRL', 'Em análise', NOW(), NOW()),
-(3, 3, 5000000.00, 'USD', 'Aprovado', NOW(), NOW()),
-(4, 4, 1200000.00, 'BRL', 'Rejeitado', NOW(), NOW()),
-(5, 5, 3500000.00, 'USD', 'Aprovado', NOW(), NOW()),
-(6, 6, 2000000.00, 'BRL', 'Em análise', NOW(), NOW()),
-(7, 7, 4500000.00, 'BRL', 'Aprovado', NOW(), NOW()),
-(8, 8, 1000000.00, 'BRL', 'Rejeitado', NOW(), NOW()),
-(9, 9, 3000000.00, 'USD', 'Aprovado', NOW(), NOW()),
-(10, 10, 700000.00, 'BRL', 'Em análise', NOW(), NOW());
+
 
 INSERT INTO etapas_projetos (id, projeto_id, nome, descricao, data_inicio, data_fim, status, created_at, updated_at)
 VALUES
@@ -814,4 +817,18 @@ VALUES
 (8, 6, 8, 2900.50, '2024-03-25', NOW()),
 (9, 7, 9, 3200.00, '2024-04-01', NOW()),
 (10, 8, 10, 2100.75, '2024-04-05', NOW());
+
+
+INSERT INTO relatorios_funcionarios (id, relatorio_id, funcionario_id, descricao)
+VALUES
+  (1, 1, 1, 'Desenvolver a funcionalidade de login'),
+  (2, 1, 2, 'Testar a funcionalidade de login'),
+  (3, 2, 3, 'Desenvolver a interface de usuário'),
+  (4, 2, 4, 'Testar a interface de usuário'),
+  (5, 3, 5, 'Desenvolver API para dados de usuários'),
+  (6, 3, 6, 'Testar API para dados de usuários'),
+  (7, 4, 7, 'Integrar front-end com back-end'),
+  (8, 4, 8, 'Testar integração entre front-end e back-end'),
+  (9, 5, 9, 'Implementar relatórios de progresso'),
+  (10, 5, 10, 'Testar geração de relatórios de progresso');
 
