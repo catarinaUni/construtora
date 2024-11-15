@@ -1,6 +1,6 @@
 DELIMITER $$
 
-CREATE TRIGGER update_projeto_status_on_all_reports_done
+CREATE TRIGGER  atualizar_status_projeto_quando_todos_relatorios_concluidos
 AFTER UPDATE ON relatorios_progresso
 FOR EACH ROW
 BEGIN
