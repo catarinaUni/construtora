@@ -33,7 +33,7 @@ DELIMITER ;
 
 
 
--- segundo trigger
+-- trigger adicional
 
 DELIMITER $$
 
