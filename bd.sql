@@ -376,7 +376,7 @@ ALTER TABLE `relatorios_despesas_materiais` ADD FOREIGN KEY (`projeto_id`) REFER
 
 
 
--- POPULAR TABELAS!!
+-- POPULAR TABELAS!
 
 INSERT INTO tipos_despesas (id, nome, descricao, created_at)
 VALUES
@@ -550,18 +550,18 @@ VALUES
 (9, 5, 9, '2024-05-05', '2024-08-05', 'Em andamento', NOW(), NOW()),
 (10, 5, 10, '2024-08-06', '2024-11-06', 'Planejamento', NOW(), NOW());
 
-INSERT INTO alocacao_funcionarios (id, projeto_id, funcionario_id, data_inicio, data_fim, created_at)
+INSERT INTO alocacao_funcionarios (id, projeto_id, funcionario_id, data_inicio, status, data_fim, created_at)
 VALUES
-(1, 1, 1, '2024-01-15', '2024-06-15', NOW()),
-(2, 1, 2, '2024-01-20', '2024-06-20', NOW()),
-(3, 2, 3, '2024-02-01', '2024-07-01', NOW()),
-(4, 2, 4, '2024-02-05', '2024-07-05', NOW()),
-(5, 3, 5, '2024-03-10', '2024-08-10', NOW()),
-(6, 3, 6, '2024-03-15', '2024-08-15', NOW()),
-(7, 4, 7, '2024-04-01', '2024-09-01', NOW()),
-(8, 4, 8, '2024-04-05', '2024-09-05', NOW()),
-(9, 5, 9, '2024-05-01', '2024-10-01', NOW()),
-(10, 5, 10, '2024-05-10', '2024-10-10', NOW());
+(1, 1, 1, '2024-01-15', 'Em andamento','2024-06-15', NOW()),
+(2, 1, 2, '2024-01-20','Em andamento', '2024-06-20', NOW()),
+(3, 2, 3, '2024-02-01', 'Em andamento','2024-07-01', NOW()),
+(4, 2, 4, '2024-02-05', 'Em andamento','2024-07-05', NOW()),
+(5, 3, 5, '2024-03-10', 'Em andamento','2024-08-10', NOW()),
+(6, 3, 6, '2024-03-15', 'Em andamento','2024-08-15', NOW()),
+(7, 4, 7, '2024-04-01', 'Em andamento','2024-09-01', NOW()),
+(8, 4, 8, '2024-04-05', 'Em andamento','2024-09-05', NOW()),
+(9, 5, 9, '2024-05-01', 'Em andamento','2024-10-01', NOW()),
+(10, 5, 10, '2024-05-10', 'Em andamento','2024-10-10', NOW());
 
 
 INSERT INTO inventario_materiais (id, material_id, quantidade, projeto_id, created_at)
