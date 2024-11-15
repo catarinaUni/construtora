@@ -821,14 +821,15 @@ VALUES
 
 INSERT INTO relatorios_funcionarios (id, relatorio_id, funcionario_id, descricao)
 VALUES
-  (1, 1, 1, 'Desenvolver a funcionalidade de login'),
-  (2, 1, 2, 'Testar a funcionalidade de login'),
-  (3, 2, 3, 'Desenvolver a interface de usuário'),
-  (4, 2, 4, 'Testar a interface de usuário'),
-  (5, 3, 5, 'Desenvolver API para dados de usuários'),
-  (6, 3, 6, 'Testar API para dados de usuários'),
-  (7, 4, 7, 'Integrar front-end com back-end'),
-  (8, 4, 8, 'Testar integração entre front-end e back-end'),
-  (9, 5, 9, 'Implementar relatórios de progresso'),
-  (10, 5, 10, 'Testar geração de relatórios de progresso');
+  (1, 1, 1, 'Preparar o alicerce da fundação'),
+  (2, 1, 2, 'Realizar testes de resistência do solo para fundação'),
+  (3, 2, 3, 'Levantar as paredes externas do prédio'),
+  (4, 2, 4, 'Testar a impermeabilização das paredes externas'),
+  (5, 3, 5, 'Instalar encanamento para abastecimento de água'),
+  (6, 3, 6, 'Testar o sistema de encanamento para vazamentos'),
+  (7, 4, 7, 'Instalar sistema elétrico e fiação no edifício'),
+  (8, 4, 8, 'Testar a rede elétrica e verificar curtos-circuitos'),
+  (9, 5, 9, 'Realizar acabamento nas áreas internas (pintura, pisos, etc.)'),
+  (10, 5, 10, 'Testar os acabamentos para garantir a qualidade do trabalho');
+
 
