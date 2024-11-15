@@ -25,3 +25,54 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+
+
+-- adicionais
+
+
+DELIMITER $$
+
+CREATE PROCEDURE gerar_relatorio_conograma_projeto(projetoId INT)
+BEGIN
+	SELECT p.nome nome_projeto
+		 , e.nome
+         , e.status status_etapa
+         , e.data_inicio
+         , e.data_fim
+      FROM cronogramas_projetos cp
+	  JOIN projetos P
+		ON cp.projeto_id = p.id
+	  JOIN etapas_projetos e
+        ON  cp.etapa_id = e.id
+	 WHERE P.id = projetoId
+  ORDER BY cp.created_at;
+END $$
+
+DESCRIBE cronogramas_projetos;
+
+DELIMITER ;
+
+
+
+
+DELIMITER $$
+
+CREATE PROCEDURE gerar_relatorio_despesas_no_projeto(projetoId INT)
+BEGIN
+	SELECT p.nome nome_projeto
+         , td.nome
+         , td.descricao descricao_despesa
+         , dg.valor
+	  FROM despesas_gerais dg
+      JOIN projetos p
+        ON dg.projeto_id = p.id
+	  JOIN tipos_despesas td
+        ON dg.tipo_despesa_id = td.id
+	 WHERE p.id = projetoId;
+END $$
+
+DESCRIBE cronogramas_projetos;
+
+DELIMITER ;
+
